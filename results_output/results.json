@@ -1,0 +1,192 @@
+{
+  "environment": {
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "python": "3.13.3",
+    "cryptography": "46.0.5",
+    "numpy": "2.2.5",
+    "opencv": "5.0.0",
+    "scipy": "1.15.2",
+    "date": "2026-10-27 14:44"
+  },
+  "covers": {
+    "image_file": "cover.png",
+    "image_shape": [
+      1200,
+      1200,
+      3
+    ],
+    "image_bytes": 1131750,
+    "audio_file": "cover.wav",
+    "audio_dtype": "int16",
+    "audio_samples": 2316288,
+    "audio_rate": 44100,
+    "audio_seconds": 52.52,
+    "audio_bytes": 4632654,
+    "text_file": "cover.tex",
+    "text_chars": 476
+  },
+  "capacity_bytes": {
+    "image": 539996,
+    "audio": 289532,
+    "largest_file_bytes": 868577
+  },
+  "pbkdf2_ms": 109.7,
+  "roundtrip": [
+    {
+      "payload_bytes": 1024,
+      "fragments": [
+        350,
+        351,
+        351
+      ],
+      "exact_recovery": true,
+      "link_chars": 591,
+      "stego_text_bytes": 9013,
+      "ms": {
+        "lock": 130.1,
+        "embed_image": 55.4,
+        "embed_audio": 7.9,
+        "embed_text": 0.9,
+        "magnet": 67.5,
+        "extract": 25.0,
+        "decrypt": 119.6
+      }
+    },
+    {
+      "payload_bytes": 10240,
+      "fragments": [
+        3422,
+        3423,
+        3423
+      ],
+      "exact_recovery": true,
+      "link_chars": 595,
+      "stego_text_bytes": 82741,
+      "ms": {
+        "lock": 121.0,
+        "embed_image": 55.8,
+        "embed_audio": 8.1,
+        "embed_text": 2.1,
+        "magnet": 73.4,
+        "extract": 32.9,
+        "decrypt": 119.6
+      }
+    },
+    {
+      "payload_bytes": 102400,
+      "fragments": [
+        34142,
+        34143,
+        34143
+      ],
+      "exact_recovery": true,
+      "link_chars": 599,
+      "stego_text_bytes": 820021,
+      "ms": {
+        "lock": 121.2,
+        "embed_image": 50.2,
+        "embed_audio": 8.1,
+        "embed_text": 15.7,
+        "magnet": 34.9,
+        "extract": 51.8,
+        "decrypt": 151.8
+      }
+    },
+    {
+      "payload_bytes": 307200,
+      "fragments": [
+        102409,
+        102409,
+        102410
+      ],
+      "exact_recovery": true,
+      "link_chars": 603,
+      "stego_text_bytes": 2458429,
+      "ms": {
+        "lock": 121.3,
+        "embed_image": 54.6,
+        "embed_audio": 10.0,
+        "embed_text": 48.4,
+        "magnet": 55.3,
+        "extract": 115.3,
+        "decrypt": 160.9
+      }
+    }
+  ],
+  "imperceptibility": [
+    {
+      "payload_kib": 1,
+      "fragment_bytes": 351,
+      "image_used_pct": 0.07,
+      "mse": 0.00032,
+      "psnr_db": 83.03,
+      "audio_used_pct": 0.12,
+      "snr_db": 105.01
+    },
+    {
+      "payload_kib": 10,
+      "fragment_bytes": 3423,
+      "image_used_pct": 0.63,
+      "mse": 0.00319,
+      "psnr_db": 73.09,
+      "audio_used_pct": 1.18,
+      "snr_db": 95.26
+    },
+    {
+      "payload_kib": 100,
+      "fragment_bytes": 34143,
+      "image_used_pct": 6.32,
+      "mse": 0.03165,
+      "psnr_db": 63.13,
+      "audio_used_pct": 11.79,
+      "snr_db": 85.28
+    },
+    {
+      "payload_kib": 300,
+      "fragment_bytes": 102409,
+      "image_used_pct": 18.97,
+      "mse": 0.09479,
+      "psnr_db": 58.36,
+      "audio_used_pct": 35.37,
+      "snr_db": 80.51
+    }
+  ],
+  "figure_test": {
+    "mse": 0.03165,
+    "psnr_db": 63.13,
+    "changed_pixels_pct": 5.537
+  },
+  "figure_actual": null,
+  "negative_tests": {
+    "wrong_password": "ValueError: INTEGRITY_FAILURE",
+    "one_bit_flipped_in_fragment_A": "ValueError: INTEGRITY_FAILURE",
+    "fragment_B_truncated_to_zero": "ValueError: INTEGRITY_FAILURE",
+    "fragment_file_missing": "FileNotFoundError: Missing fragment file: C:\\Users\\VICTUS\\AppData\\Local\\Temp\\stego_eval_1",
+    "one_bit_changed_in_audio_carrier": "digest differs (detected)",
+    "expired_link": "PermissionError: Stego Magnet Link has expired (TTL elapsed).",
+    "invalid_scheme": "ValueError: Invalid Stego Magnet URI format.",
+    "payload_over_image_capacity": "ValueError: Cover image too small. Needs 4320008 bits, has 4320000.",
+    "payload_over_audio_capacity": "ValueError: Cover audio too short. Needs 2316296 samples, has 2316288.",
+    "zero_byte_file": "restored, 0 bytes; fragments [7, 8, 8]",
+    "stego_image_saved_as_jpeg_q95": "payload destroyed; extractor raised ValueError"
+  },
+  "loopback_transfer": {
+    "payload_kib": 100,
+    "total_bytes": 6610455,
+    "ms": 33.5,
+    "digests_match": true
+  },
+  "pytest": {
+    "files": [
+      "test_module1.py",
+      "test_module2.py"
+    ],
+    "exit_code": 0,
+    "summary": "8 passed in 1.11s"
+  },
+  "backend": {
+    "skipped": "ports [5001, 5002, 5003] are in use - click 'Stop Seeding & Withdraw Link' in the app and run again"
+  }
+}

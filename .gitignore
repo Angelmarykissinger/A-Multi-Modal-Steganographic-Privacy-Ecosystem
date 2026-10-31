@@ -1,0 +1,20 @@
+# generated at run time
+fragments/
+stego_carriers/
+network_received_carriers/
+real_receiver_output/
+restored/
+seeder.lock
+seeder.stop
+__pycache__/
+.pytest_cache/
+.dart_tool/
+.packages
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.idea/
+.vscode/
+*.iml
+.env
